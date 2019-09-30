@@ -26,7 +26,6 @@ if (L_ambiCivs_debug) then {
 };
 
 if ([_civ] call L_ambiCivs_fnc_deleteCheck) then {
-	hintSilent "Delete!";
 	private _index = L_ambiCivs_civs find _civ;
 	private _house = _civ getVariable ["L_ambiCivs_house",objNull];
 	_house setVariable ["L_ambiCivs_houseIsFree",nil];

@@ -21,5 +21,5 @@ L_ambiCivs_enabled = true;
 
 
 /* Debug mode? (Shows debug markers on map on the machine the script is run from) */
-L_ambiCivs_debug = true;
+L_ambiCivs_debug = false;
 
