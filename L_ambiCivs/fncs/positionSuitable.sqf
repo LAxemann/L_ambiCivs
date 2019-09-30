@@ -5,7 +5,7 @@
 *
 *	Params:
 *	0 - Position to check
-*	1 - [Optional] minimum distance
+*	1 - [Optional] minimum distance (2d)
 *
 *	Example:
 */
@@ -16,6 +16,7 @@ params [
 ];
 private _minDistReal = _minDist;
 private _suitable 	= true;
+private _multiplierValue = (L_ambiCivs_elevationMultiplier - 1) max 0;
 
 // Check if position lies within blacklist
 {
@@ -26,12 +27,12 @@ private _suitable 	= true;
 // Check if position is too close to players
 if (_suitable) then {
 	{	
-		if (L_ambiCivs_increaseForAir && {(vehicle _x) isKindOf "Air"}) then {
-			_minDist = _minDist * L_ambiCivs_airMultiplicator;
+		if (L_ambiCivs_increaseWithElevation) then {
+			_minDist = [eyePos _x,ATLtoASL _searchPos,_minDistReal,_multiplierValue] call L_ambiCivs_fnc_getElevationMultiplicatorValue;
 		} else {
 			_minDist = _minDistReal;
 		};
-		if ((_searchPos distance _x) < _minDist) exitWith {_suitable = false};
+		if ((_searchPos distance2d _x) < _minDist) exitWith {_suitable = false};
 	} count L_ambiCivs_players;
 };
 

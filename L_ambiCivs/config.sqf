@@ -4,8 +4,9 @@ L_ambiCivs_minSpawnDistance 		= 100;		// Minimum distance to players when spawni
 L_ambiCivs_maxDistanceToPlayers    	= 300;		// Maximum distance to players, both for spawning and deleting civilians
 L_ambiCivs_inhabitChance 			= 0.5;		// Population density. 0 = No house will be rendered suitable, 1 = every house will be suitable
 
-L_ambiCivs_increaseForAir 			= true;		// Increase the spawn and delete range if a nearby player uses an air vehicle
-	L_ambiCivs_airMultiplicator 	= 4;		// Factor the distances will be multiplied with when in an air vehicle
+L_ambiCivs_increaseWithElevation 	= true;		// Increase the spawn and delete range if players are elevated (so they can look "into" the city)
+	L_ambiCivs_elevationMultiplier	    = 4;		// Maximum factor the distance will be multiplied with
+	L_ambiCivs_maxElevationDifference   = 100;		// At which height the maximum multiplicator will be applied
 	
 L_ambiCivs_autoBehaviour			= true;		// Whether the civilans should use default behaviour or not. Disabling this will just spawn them and nothing else.
 L_ambiCivs_customInitFunction		= "";		// Function that will be called when spawning a civilian. Arguments passed are [Civilian,Assigned House]. E.g: L_ambiCivs_customInitFunction = MyFunction;
