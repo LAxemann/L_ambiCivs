@@ -23,6 +23,7 @@ The script runs COMPLETELY SERVER-SIDE.
 
 /* Known issues / limitations */
 - The script focuses on performance and by default does a simple job - it makes AI civilians walk around cities. Advanced behaviour has to be scripted manually.
+- Spawning units in ArmA always causes a micro-lag. The script is very efficient and can spawn civilians in a very rapid order by decreasing the check-intervals, but bear in mind that the micro-stuttering from spawning units will appear a lot more often this way.
 
 
 /* License */
